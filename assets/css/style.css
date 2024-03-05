@@ -346,7 +346,14 @@ header .navbar ul li a:hover {
 }
 .resumebtn .separator {
   display: inline-block;
+  
   width: 10px; /* Adjust the width as needed */
+}
+/* Adjust the separator width for smaller devices */
+@media screen and (max-width: 600px) {
+  .resumebtn .separator {
+    display: none; /* Hide the separator on small devices */
+  }
 }
 .resumebtn {
   margin-top: 4rem;
@@ -478,7 +485,6 @@ header .navbar ul li a:hover {
 }
 .skills .container .bar {
   position: relative;
-  flex-basis: calc(33.33% - 1.8rem);
   padding: 10px;
   border-radius: 1rem;
   background: #747264;
