@@ -71,13 +71,12 @@ header .logo {
   font-size: 1.9rem;
   text-decoration: none;
   color: #EEEDEB;
-}
-.logo {
   transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
   display: flex;
   align-items: center;
   text-decoration: none;
 }
+
 .logo:hover {
   transform: scale(1.3); /* Increase the scale on hover */
 }
@@ -279,26 +278,6 @@ header .navbar ul li a:hover {
   transform: translatey(-10px);
 }
 /* social icons end */
-
-/* hero media queries starts*/
-@media (max-width: 450px) {
-  .home .btn {
-    margin: 4rem 0;
-  }
-  .socials {
-    margin-top: 12rem;
-  }
-  .home .image img {
-    margin-top: -12rem;
-  }
-  .home .content p {
-    font-size: 2.2rem;
-  }
-  .home .content p span {
-    font-size: 2.2rem;
-  }
-}
-/* hero media queries ends*/
 /* hero section end */
 
 /* about section starts */
@@ -309,7 +288,7 @@ header .navbar ul li a:hover {
 .about .row {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+
   flex-wrap: wrap;
   padding: 4rem;
   padding-top: 9rem;
@@ -365,6 +344,10 @@ header .navbar ul li a:hover {
   color: #E0CCBE;
   font-weight: 600;
 }
+.resumebtn .separator {
+  display: inline-block;
+  width: 10px; /* Adjust the width as needed */
+}
 .resumebtn {
   margin-top: 4rem;
 }
@@ -419,19 +402,20 @@ header .navbar ul li a:hover {
 /* about media queries ends*/
 /* about section ends */
 
-/* skills section starts */
-.info img{
-  height: 200px;
-  width: 200px;
-  object-fit: cover;
-}
 .skills {
-  min-height: 100vh;
+  min-height: 90vh;
   background: linear-gradient(to bottom, #3C3633, #747264);
+  padding-bottom: 2rem; /* Added padding to the bottom */
 }
+
 .skills h2 {
   color: #fff;
 }
+
+.skills .heading span {
+  color: #E0CCBE;;
+}
+
 .skills .container {
   background: #E0CCBE;
   color: #EEEDEB;
@@ -440,25 +424,27 @@ header .navbar ul li a:hover {
   width: 90%;
   margin: auto;
   margin-top: 2rem;
+  overflow: hidden; /* Added overflow to contain floated items */
 }
+
 .skills .container .row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: space-between; /* Adjusted alignment of items */
+  gap: 1.8rem;
 }
+
 .skills .container .bar {
-  margin-bottom: 15px;
+  flex-basis: calc(33.33% - 1.8rem); /* Adjusted width for large screens */
   padding: 10px;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background: #747264;
   transition: 0.2s;
 }
-.skills .container .bar:hover {
-  box-shadow: 0 8px 10px #3C3633;
-  background-color: #3C3633;
-}
+
+
+
 .skills .container .bar .info {
   display: flex;
   flex-direction: column;
@@ -466,56 +452,100 @@ header .navbar ul li a:hover {
   gap: 1rem;
   margin-top: 1rem;
 }
+
 .skills .container .bar .info i {
   font-size: 4rem;
 }
+
 .skills .container .bar .info span {
   font-size: 2rem;
   font-weight: 500;
   font-family: "Poppins";
   margin-left: 0.5rem;
 }
-/* skills media queries starts*/
-@media screen and (max-width: 600px) {
-  .skills .container {
-    padding: 0;
-    margin: 0;
-  }
-  .skills .container .row {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 1rem;
-    padding: 2rem 0.2rem 2rem 0.2rem;
-    gap: 1rem;
-  }
-  .skills .container {
-    margin-top: 5px;
-    width: 100%;
+
+/* skills media queries starts */
+@media screen and (max-width: 900px) {
+  .skills .container .bar {
+    flex-basis: calc(50% - 1.8rem); /* Adjusted width for medium screens */
   }
 }
-/* skills media queries ends*/
-/* skills section ends */
+
+@media screen and (max-width: 600px) {
+  .skills .container .bar {
+    flex-basis: calc(100% - 1.8rem); /* Adjusted width for small screens */
+  }
+}
+.skills .container .bar {
+  position: relative;
+  flex-basis: calc(33.33% - 1.8rem);
+  padding: 10px;
+  border-radius: 1rem;
+  background: #747264;
+  overflow: hidden; /* Ensure the dark color stays inside the bar */
+  transition: height 0.3s;
+}
+
+.skills .container .bar::before {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Place the overlay at the top */
+  left: 0;
+  width: 100%;
+  height: 0; /* Initially no height */
+  background: linear-gradient(to top, #3C3633 40%, rgba(60, 54, 51, 0) 100%); /* Darker at bottom, slightly dark at top */
+  opacity: 0; /* Initially transparent */
+  transition: height 0.3s, opacity 0.3s;
+  animation: boil 0.5s alternate infinite ease-in-out; /* Boiling animation */
+}
+
+.skills .container .bar:hover::before {
+  height: calc(var(--percentage) * 1%);
+  opacity: 1; /* Show the dark color representing the percentage on hover */
+}
+
+.skills .container .percentage {
+  position: absolute;
+  bottom: 10%; /* Position the percentage in the middle vertically */
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: rgba(255, 255, 255, 0.8); /* Transparent white color */
+  opacity: 0; /* Initially transparent */
+  transition: opacity 0.3s; /* Smooth transition for opacity */
+}
+
+.skills .container .bar:hover .percentage {
+  opacity: 1; /* Show the percentage text on hover */
+}
+
+.skills .container .bar:hover .percentage {
+  animation: none; /* Disable boiling effect on hover */
+}
+
+@keyframes boil {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* skills media queries ends */
 
 /* education section starts */
-.box{
-  margin: 30px 0px 10px 0px;
-}
-.image{
-  height: 300px;
-  width: 500px;
-  object-fit: cover;
-}
 .heading1{
   font-size: 3.3rem;
   color: #3C3633;
   font-weight: 800;
   text-align: center;
 }
+.heading1 span{
+  color: #747264;
+}
 .education {
   background: #E0CCBE;
   min-height: 100vh;
 }
 .education .qoute {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
@@ -536,24 +566,24 @@ header .navbar ul li a:hover {
   box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
-  margin-top: 2rem;
+  margin-top: 7rem;
   overflow: hidden;
   transition: 0.3s;
   background: rgb(252, 252, 252);
 }
 .education .box-container .box:hover {
   transform: scale(1.03);
-  box-shadow: 1rem 0.5rem 1.2rem rgba(0, 0, 0, 0.3);
+  box-shadow: 1.5rem 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 .education .box-container .box .image {
   flex: 1 1 20rem;
   width: 100%;
 }
 .education .box-container .box img {
-  position: relative;
-  height: 300px;
-  width: 500px;
   object-fit: cover;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 .education .box-container .box .content {
   position: relative;
@@ -572,12 +602,12 @@ header .navbar ul li a:hover {
   margin-left: 1rem;
 }
 .education .box-container .box .content p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-left: 1rem;
   text-align: left;
 }
 .education h4 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: rgb(34, 109, 0);
   text-align: left;
   margin: 1rem;
@@ -631,6 +661,7 @@ header .navbar ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  margin: 2rem;
 }
 .work .box-container .box {
   flex: 1 1 30rem;
@@ -641,7 +672,9 @@ header .navbar ul li a:hover {
   height: 40rem;
 }
 .work .box-container .box img {
-  object-fit:cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .work .box-container .box .content {
   height: 100%;
@@ -671,10 +704,14 @@ header .navbar ul li a:hover {
   top: 25%;
 }
 .work .desc {
-  margin: 2rem;
+  margin: 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.work .desc strong p{
+  font-size: 2rem;
+  font-weight: 700;
 }
 .work .desc p {
   font-size: 1.5rem;
