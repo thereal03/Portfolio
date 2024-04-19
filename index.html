@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
     <link id='favicon' rel="shortcut icon" href="./assets/images/Avatar.png" type="image/x-png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>Portfolio | Daryll Medina</title>
 </head>
 
@@ -28,7 +30,8 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#work">Project</a></li>
-            <!-- <li><a href="#contact">Contact</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
             </ul>
         </nav>
 </header>
@@ -36,6 +39,11 @@
 
 <!-- header section starts -->
 <section class="home" id="home">
+  <div class="bgAnimation" id="bgAnimation">
+    <div class="backgroundAmim">
+        
+    </div>
+</div>
     <div class="content">
     <h2>Greetings, Developers!<br/> I'm Daryll <span>Medina</span></h2>
     <p>I am into <span class="typing-text"></span></p>
@@ -67,7 +75,7 @@
         <img draggable="false" class="tilt" src="./assets/images/profile2.jpg" alt="">
     </div>
     <div class="content">
-        <h3>Daryll Timothy A. Medina</h3>
+        <h3 class="prof">Daryll Timothy A. Medina</h3>
         <span class="tag">Web Developer</span>
         
         <p>As you dive in my personal project you would able to see my expertise as a Web Developer. 
@@ -88,7 +96,7 @@
         <div class="resumebtn">
           <a href="./assets/files/Resume.pdf" download="Resume.pdf" target="_blank" class="btn"><span>Resume</span> <i class="fas fa-chevron-right"></i></a>
           <span class="separator"></span> 
-          <a href="./assets/files/CV.pdf" download="CV.pdf" target="_blank" class="btn"><span>CV</span> <i class="fas fa-chevron-right"></i></a>
+          <a href="./assets/files/Cover-letter.pdf" download="CV.pdf" target="_blank" class="btn"><span>Cover Letter</span> <i class="fas fa-chevron-right"></i></a>
         </div>
     </div>
     </div>
@@ -98,97 +106,116 @@
 <!-- skills section starts -->
 <section class="skills" id="skills">
   <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+    <!-- Filter buttons -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="frontend">Frontend</button>
+      <button class="filter-btn" data-filter="backend">Backend</button>
+      <button class="filter-btn" data-filter="others">Others</button>
+    </div>
   <div class="container">
     <div class="row" id="skillsContainer">
-      <div class="bar" style="--percentage: 80;">
+      <!-- HTML -->
+      <div class="bar frontend" style="--percentage: 80;">
         <div class="info">
           <img src="./assets/images/skills/html.png"/>
           <span class="percentage">80%</span> <!-- Percentage display -->
           <span>HTML</span> <!-- Skill name -->
         </div>
       </div>
-      <div class="bar" style="--percentage: 65;">
+      <!-- CSS -->
+      <div class="bar frontend" style="--percentage: 65;">
         <div class="info">
           <img src="./assets/images/skills/css.png"/>
           <span class="percentage">65%</span> <!-- Percentage display -->
           <span>CSS</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 20;">
+      <!-- JavaScript -->
+      <div class="bar frontend" style="--percentage: 20;">
         <div class="info">
           <img src="./assets/images/skills/javascript.png"/>
           <span class="percentage">20%</span> <!-- Percentage display -->
           <span>JavaScript</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 55;">
+      <!-- Java -->
+      <div class="bar backend" style="--percentage: 55;">
         <div class="info">
           <img src="./assets/images/skills/java.png"/>
           <span class="percentage">55%</span> <!-- Percentage display -->
           <span>Java</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 75;">
+      <!-- Python -->
+      <div class="bar backend" style="--percentage: 75;">
         <div class="info">
           <img src="./assets/images/skills/python.png"/>
           <span class="percentage">75%</span> <!-- Percentage display -->
           <span>Python</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 60;">
+      <!-- Node.js -->
+      <div class="bar backend frontend" style="--percentage: 60;">
         <div class="info">
           <img src="./assets/images/skills/node.png"/>
           <span class="percentage">60%</span> <!-- Percentage display -->
           <span>NodeJS</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 45;">
+      <!-- PHP -->
+      <div class="bar backend" style="--percentage: 45;">
         <div class="info">
           <img src="./assets/images/skills/php.png"/>
           <span class="percentage">45%</span> <!-- Percentage display -->
           <span>PHP</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 60;">
+      <!-- SQL -->
+      <div class="bar backend" style="--percentage: 60;">
         <div class="info">
           <img src="./assets/images/skills/sql.png"/>
           <span class="percentage">60%</span> <!-- Percentage display -->
           <span>SQL</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 50;">
+      <!-- Dart -->
+      <div class="bar frontend backend" style="--percentage: 50;">
         <div class="info">
           <img src="./assets/images/skills/dart.png"/>
           <span class="percentage">50%</span> <!-- Percentage display -->
           <span>Dart</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 85;">
+      <!-- Windows -->
+      <div class="bar others" style="--percentage: 85;">
         <div class="info">
           <img src="./assets/images/skills/windows.png"/>
           <span class="percentage">85%</span> <!-- Percentage display -->
           <span>Windows</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 35;">
+      <!-- Linux -->
+      <div class="bar others" style="--percentage: 35;">
         <div class="info">
           <img src="./assets/images/skills/linux.png"/>
           <span class="percentage">35%</span> <!-- Percentage display -->
           <span>Linux</span>
         </div>
       </div>
-      <div class="bar" style="--percentage: 45;">
+      <!-- MacOS -->
+      <div class="bar others" style="--percentage: 45;">
         <div class="info">
           <img src="./assets/images/skills/macos.png"/>
           <span class="percentage">45%</span> <!-- Percentage display -->
           <span>MacOS</span>
         </div>
       </div>
-      <!-- Add more skills as needed -->
     </div>
   </div>
 </section>
 <!-- skills section ends -->
+
 
 <!-- education section starts -->
 <section class="education" id="education">
@@ -305,6 +332,9 @@
           The special feature was using MongoDB, where users can have accounts to access 
           their favorite mangas. The website stores user data and manga 
           information to enhance the reading experience.</p>
+          <div class="btns">
+            <a href="https://github.com/thereal03/Projects/tree/main/manga-reader-master" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          </div>
       </div>
     </div>
   </div>
@@ -321,6 +351,9 @@
           create, read, update, and delete reservations. Users can easily 
           manage and modify their reservations according to their needs.
         </p>
+        <div class="btns">
+          <a href="https://github.com/thereal03/Projects/blob/main/BRISKVRS2.zip" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+        </div>
       </div>
     </div>
   </div>
@@ -332,9 +365,116 @@
 </div> -->
 </section>
 <!-- work project section ends -->
+<section class="testimonials" id="testimonials">
+  <h2 class="heading"><i class="fas fa-comments"></i> The <span>Testimonials</span></h2>
+
+  <section class="swiper-whole">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <img src="./assets/images/quote.png" class="quote">
+            <div class="content">
+              <p>Working together on this project has been an incredible journey filled with collaboration, creativity, and mutual support. 
+                I'm grateful for the opportunity to partner with such talented individuals, and I'm proud of what we've accomplished together.</p>
+              <div class="details">
+                <div class="imgBx">
+                  <img src="./assets/images/testimonial3.jpg">
+                </div>
+                <h3>Carlo Quilla<br><span>Treasurer LOOP | Computer Science</span></h3>
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <img src="./assets/images/quote.png" class="quote">
+            <div class="content">
+              <p>Working with Thereal to create my tailor shop's website was a fantastic experience. 
+                They understood exactly what I needed and delivered a website that exceeded my expectations. 
+                I'm thrilled with the result and would recommend Thereal to anyone looking for a talented web designer.</p>
+              <div class="details">
+                <div class="imgBx">
+                  <img src="./assets/images/testimonial2.png">
+                </div>
+                <h3>Erwin Enriquez<br><span>Owner of Three Tailor Shop</span></h3>
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <img src="./assets/images/quote.png" class="quote">
+            <div class="content">
+              <p> I had the pleasure of receiving guidance and assistance from TheReal on my project, and it was incredibly valuable. 
+                Their expertise and support were instrumental in achieving success, and I highly recommend them for any project.</p>
+              <div class="details">
+                <div class="imgBx">
+                  <img src="./assets/images/testimonial1.jpg">
+                </div>
+                <h3>Kier Paolo Nebres<br><span>Aeronautical Engineering | SEA</span></h3>
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <img src="./assets/images/quote.png" class="quote">
+            <div class="content">
+              <p>Working alongside Thereal has been an extraordinary journey filled with dedication, expertise, 
+                and an unwavering spirit of collaboration, all of which have been pivotal in the triumph of our project. 
+                I enthusiastically endorse partnering with them for any endeavor.</p>
+              <div class="details">
+                <div class="imgBx">
+                  <img src="./assets/images/testimonial4.jpg">
+                </div>
+                <h3>Carlo Centeno<br><span>SO2 | Civil Engineering | SEA</span></h3>
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <img src="./assets/images/quote.png" class="quote">
+            <div class="content">
+              <p>TheReal was easy to collaborate with and find assistance from. Their expertise is highly 
+                valued and appreciated and I highly recommend partnering with them</p>
+              <div class="details">
+                <div class="imgBx">
+                  <img src="./assets/images/testimonial5.png">
+                </div>
+                <h3>Abby Sta Ana<br><span>Business Management | SBA</span></h3>
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <img src="./assets/images/quote.png" class="quote">
+            <div class="content">
+              <p>Thereal has proven that he is of great service through his quality contributions. 
+                He is a reliable teammate, open to collaboration and feedback. His diligence and initiative 
+                set him apart from most of the collaborations I had.</p>
+              <div class="details">
+                <div class="imgBx">
+                  <img src="./assets/images/testimonial6.png">
+                </div>
+                <h3>Railly Mallari<br><span>President, Cybersecurity Intelligence Alliance</span></h3>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+      <div class="swiper-pagination"></div> 
+    </div>
+  </section>
+</section>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- testimonials section start -->
+<!-- Testimonials Section -->
 
 <!-- contact section starts -->
-<!-- <section class="contact" id="contact">
+<section class="contact" id="contact">
   
   <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
 
@@ -343,15 +483,18 @@
       <div class="image-box">
         <img draggable="false" src="./assets/images/contact1.png" alt="">
       </div>
-    <form id="contact-form">
-      
+      <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="17fb3d71-8eb6-4adb-9f23-f3dadf74669f">
+    <!-- Create a custom subject line based on user's input -->
+    <input type="hidden" name="subject" value='Somebody sent a message from your Portfolio' />
       <div class="form-group">
         <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
+          <input type="text" name="name" placeholder="Name *" required>
           <i class='fas fa-user'></i>
         </div>
         <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
+          <input type="text" name="email" placeholder="Email *" required>
           <i class='fas fa-envelope'></i>
         </div>
         <div class="field">
@@ -359,7 +502,7 @@
           <i class='fas fa-phone-alt'></i>
         </div>
         <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
+        <textarea placeholder="Message *" name="message" required></textarea>
         <i class="fas fa-comment-dots"></i>
         </div>
         </div>
@@ -370,9 +513,17 @@
     </form>
   </div>
   </div>
-</section> -->
+</section>
 <!-- contact section ends -->
 
+<!-- Pop-up start-->
+<div id="popup" class="popup-container">
+  <img src="./assets/images/WebBanner.png" alt="Web Banner" class="popup-image">
+  <span class="close-btn" onclick="closePopup()">X</span>
+  <span class="minimize-btn" onclick="minimizePopup()">-</span>
+  <span class="maximize-btn" onclick="maximizePopup()" style="display: none;">+</span>
+</div>
+<!-- Pop-up end-->
 
 <!-- footer section starts -->
 <section class="footer">
@@ -391,6 +542,7 @@
           <a href="#skills"><i class="fas fa-chevron-circle-right"></i> Skills</a>
           <a href="#education"><i class="fas fa-chevron-circle-right"></i> Education</a>
           <a href="#work"><i class="fas fa-chevron-circle-right"></i> Project</a>
+          <a href="#testimonials"><i class="fas fa-chevron-circle-right"></i> Testimonials</a>
       </div>
 
       <div class="box">
@@ -420,16 +572,26 @@
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
 <!-- jquery cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!-- typed.js cdn -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!-- vanilla tilt.js links -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!-- scroll reveal anim -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
 <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
     ></script>
+
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 <script src="./assets/js/script.js"></script>
+<script src="./assets/js/box.js"></script>
+<script src="./assets/js/testimonial.js"></script>
+<script src="./assets/js/popup.js"></script>
 </body>
 </html>
+
